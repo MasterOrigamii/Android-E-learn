@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CourseNameItemLayout">
+
+        <attr name="c_title_text" format="string" />
+        <attr name="c_hint_text" format="string" />
+        <attr name="c_school_text" format="string" />
+        <attr name="c_icon_reference" format="reference" />
+        <attr name="c_icon_uri" format="string" />
+        <attr name="c_jump_url" format="string" />
+        <attr name="c_divide_line_style" format="integer" />
+    </declare-styleable>
+</resources>
