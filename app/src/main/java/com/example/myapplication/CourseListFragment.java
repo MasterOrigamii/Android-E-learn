@@ -41,6 +41,9 @@ public class CourseListFragment extends Fragment {
     public CourseListFragment() {
     }
 
+
+
+
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static CourseListFragment newInstance(int columnCount) {
@@ -87,8 +90,6 @@ public class CourseListFragment extends Fragment {
         }
 
 
-
-
         return view;
     }
 
@@ -126,6 +127,11 @@ public class CourseListFragment extends Fragment {
 
 
         // TODO: Update argument type and name
+
+        /**
+         * 接受到来自ViewHolder的监听点击事件
+         * @param item
+         */
         void onListFragmentInteraction(DummyItem item);
     }
 }

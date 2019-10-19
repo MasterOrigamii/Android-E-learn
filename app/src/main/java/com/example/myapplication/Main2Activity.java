@@ -98,6 +98,10 @@ public class Main2Activity extends FragmentActivity implements com.example.myapp
     }
 
 
+    /**
+     * 接受到来自ListFragment的监听
+     * @param item
+     */
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
