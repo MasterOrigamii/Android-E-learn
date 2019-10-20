@@ -27,6 +27,7 @@ Androi Studio
 显示课程名称及开课院校
 显示开课时间以及当前进度
 显示课程大纲 （此部分实现可折叠）
+
 <figure class="third">
     <img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_1.jpg" width="200"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_2.jpg" width="200"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_3.jpg" width="200"/>
 </figure>
