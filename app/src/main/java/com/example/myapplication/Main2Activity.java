@@ -107,6 +107,12 @@ public class Main2Activity extends FragmentActivity implements com.example.myapp
 
         Intent showDetailActivity =
                 new Intent(getApplicationContext(), CourseDetailActivity.class);
+
+        showDetailActivity.putExtra("courseName",item.courseName);
+        showDetailActivity.putExtra("courseSchoolName",item.courseSchoolName);
+        showDetailActivity.putExtra("scheduleBeginEnd",item.scheduleBeginEnd);
+        showDetailActivity.putExtra("scheduleNow",item.scheduleNow);
+
         startActivity(showDetailActivity);
     }
 }

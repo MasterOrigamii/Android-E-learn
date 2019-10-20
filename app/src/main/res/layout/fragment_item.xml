@@ -10,7 +10,6 @@
     android:orientation="vertical">
 
 
-
     <TextView
         android:id="@+id/item_number"
         android:layout_width="wrap_content"
@@ -70,6 +69,61 @@
             app:layout_constraintStart_toEndOf="@+id/coursePicImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.505" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/NiceCourse"
+            android:layout_width="52dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/CourseDetailTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/CourseNameTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.73"
+            app:srcCompat="@drawable/nicecourse" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView2"
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toEndOf="@+id/coursePicImageView"
+            app:layout_constraintTop_toBottomOf="@+id/CourseDetailTextView"
+            app:layout_constraintVertical_bias="0.64"
+            app:srcCompat="@drawable/human" />
+
+        <TextView
+            android:id="@+id/numberOfJoinTextView"
+            android:layout_width="69dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/CourseDetailTextView"
+            app:layout_constraintVertical_bias="0.87" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

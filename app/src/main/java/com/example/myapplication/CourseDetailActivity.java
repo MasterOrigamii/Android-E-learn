@@ -2,12 +2,14 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import java.io.File;
@@ -17,6 +19,11 @@ public class CourseDetailActivity extends AppCompatActivity {
 
     private VideoView mVideoView;
     private Button mButton;
+    private TextView mCourseNameTextView;
+    private TextView mSchoolTextView;
+    private TextView mJoinNumTextView;
+    private TextView mBeginEndTextView;
+    private TextView mScheduleNowView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,23 @@ public class CourseDetailActivity extends AppCompatActivity {
                 mVideoView.start();
             }
         });
+
+        Intent in = getIntent();
+        String courseName = in.getStringExtra("courseName");
+        String courseSchoolName = in.getStringExtra("courseSchoolName");
+        String scheduleBeginEnd = in.getStringExtra("scheduleBeginEnd");
+        String scheduleNow = in.getStringExtra("scheduleNow");
+
+        mCourseNameTextView = findViewById(R.id.courseNameTextView);
+        mSchoolTextView = findViewById(R.id.universitytextView);
+        mBeginEndTextView = findViewById(R.id.course_schedule_beginEnd_textView);
+        mScheduleNowView = findViewById(R.id.course_schedule_now_textView);
+
+        mCourseNameTextView.setText(courseName);
+        mSchoolTextView.setText(courseSchoolName);
+        mBeginEndTextView.setText(scheduleBeginEnd);
+        mScheduleNowView.setText(scheduleNow);
+
 
     }
 }

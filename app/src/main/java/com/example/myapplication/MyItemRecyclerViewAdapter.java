@@ -131,8 +131,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                         //从列表中定位一项
                 holder.mItem = mValues.get(mPosition);
 
+
+                //若不是精品课程则隐藏精品课程标志
+                if(!holder.mItem.niceCourse) holder.NiceCourseImageView.setVisibility(View.INVISIBLE);
+
+                //填充文字信息
                 holder.CourseNameTextView.setText(holder.mItem.courseName);
                 holder.CourseSchoolTextView.setText(holder.mItem.courseSchoolName);
+                holder.numberOfJoinTextView.setText(holder.mItem.numberOfJoin+"");
+
 
                 int pic = getImg(mPosition);
                 if (pic != -1) {
@@ -173,7 +180,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final TextView CourseSchoolTextView;
 
         public final AppCompatImageView coursePicImageView;
-
+        public final AppCompatImageView NiceCourseImageView;
+        public final TextView numberOfJoinTextView;
 
 
         public ViewHolder(View view) {
@@ -187,6 +195,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
             CourseNameTextView = view.findViewById(R.id.CourseNameTextView);
             CourseSchoolTextView = view.findViewById(R.id.CourseDetailTextView);
+
+            NiceCourseImageView = view.findViewById(R.id.NiceCourse);
+            numberOfJoinTextView = view.findViewById(R.id.numberOfJoinTextView);
         }
 
         @Override

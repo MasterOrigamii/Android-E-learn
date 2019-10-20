@@ -49,6 +49,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+
             <com.example.myapplication.CourseNameItemLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,6 +60,11 @@
                 app:c_hint_text="23291人参加"
                 app:c_title_text="安卓移动应用开发" />
 
+
+            <com.example.myapplication.CourseScheduleOverallLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:c_divide_line_style="2" />
 
             <com.example.myapplication.MenuItemLayout
                 android:layout_width="match_parent"
