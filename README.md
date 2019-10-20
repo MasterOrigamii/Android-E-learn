@@ -8,6 +8,8 @@ Androi Studio
 
 ### 1.3实现程度
 #### 1.3.1登录界面
+
+![example](https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/Login.jpg.jpg)
 请使用用户名：“17301127”
 密码请使用：“luoyao”
 #### 1.3.2主界面
@@ -16,5 +18,6 @@ Androi Studio
 目前只有课程列表的Fragment有内容
 #### 1.3.3课程列表
 列表项布局已经设计完毕
-等待图片和文字内容的填充
-![example](https://github.com/MasterOrigamii/Android-E-learn/blob/master/app/src/main/res/drawable/example.jpeg)
+![example](https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseList.jpg)
+
+
