@@ -9,7 +9,6 @@
         android:id="@+id/scrollable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:fillViewport="true">
 
 
@@ -65,6 +64,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:c_divide_line_style="2" />
+
+            <com.example.myapplication.CourseSyllabusItemLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <com.example.myapplication.MenuItemLayout
                 android:layout_width="match_parent"

@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fuckme"
+    android:layout_width="match_parent"
+    android:layout_height="200sp"
+    android:background="@color/white"
+    android:orientation="vertical">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/syllabusTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="课程大纲"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/syllabusContentTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/syllabusContentTextView"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="课前准备 《Java程序设计》学习日历 准备教材及热身活动 第1讲 Java语言与面向对象的程序设计 1.1 Java语言的历史与特点 1.2 面向对象程序设计 week1 小结 Week1 测试 第2讲 简单的Java程序 2.1 Java程序的类型与基本构成 2.2 开发Java程序的基本步骤 2.3 程序中进行输入与输出 2.4 Java开发工具 week2 小结 Week2 测试 week2互评作业 第3讲 数据运算、流控制和数组 3.1 数据类型、变量与常量 3.2 运算符与表达式 3.3 流程控制语句 3.4 数组 week3 小结 Week3 测试 week3互评作业 第4讲 类、包和接口 4.1 类、字段、方法 4.2 类的继承 4.3 包 4.4 访问控制符 4.5 其他修饰符 4.6 接口 4.7 语法小结 week4 小结 Week4 测试 Week4 互评作业 第5讲 深入理解Java语言 5.1 变量及其传递 5.2 多态及虚方法调用 5.3 对象构造与初始化 5.4 对象清除与垃圾回收 5.5 内部类与匿名类 5.6 Lambda表达式（*） 5.7 其他几个高级语法(*) 5.8 没有指针的Java语言 week5 小结 Week5 测试 Week5 互评作业 第6讲 异常处理 6.1 异常处理 6.2 自定义异常 6.3 断言及程序的测试 6.4 程序的调试 week6 小结 Week6 测试 Week6 互评作业 第7讲 工具类及常用算法 7.1 Java语言基础类 7.2 字符串及日期 7.3 集合 7.4 排序与查找 7.5 泛型(*) 7.6 常用算法 week7 小结 Week7 测试 Week7 互评作业 第8讲 多线程 8.1 线程的创建 8.2 线程的控制 8.3 线程的同步（*） 8.4 并发API 8.5 流式操作及并行流（*） week8 小结 Week8 测试 Week8 互评作业 第9讲 流、文件及基于文本的应用 9.1 输入输出流 9.2 文件及目录 9.3 正则表达式 week9 小结 Week9 测试 Week9 互评作业 第10讲 图形用户界面 10.1 组件 10.2 实现界面的三步曲 10.3 布局管理 10.4 事件处理 10.5 常用组件的使用 10.6 Applet week10 小结 Week10 互评作业 Week10 测试 第11讲 网络、多媒体和数据库编程 11.1 网络编程 11.2 多媒体编程 11.3 数据库编程 week11 小结 Week11 测试 Week11 互评作业 第12讲 怎样写好程序 12.1 写好程序的一些经验 12.2 重构 12.3 设计模式 12.4 反射 week12 小结"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/SeeMoreButton"
+            android:layout_width="0dp"
+            android:layout_height="65sp"
+            android:layout_marginTop="136dp"
+            android:background="@drawable/seemore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

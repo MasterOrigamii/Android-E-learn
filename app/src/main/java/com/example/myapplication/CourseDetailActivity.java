@@ -48,6 +48,15 @@ public class CourseDetailActivity extends AppCompatActivity {
         String courseSchoolName = in.getStringExtra("courseSchoolName");
         String scheduleBeginEnd = in.getStringExtra("scheduleBeginEnd");
         String scheduleNow = in.getStringExtra("scheduleNow");
+        int picNumber = Integer.parseInt(in.getStringExtra("picNumber"));
+        int pic = getImg(picNumber);
+        if (pic != -1) {
+
+            mVideoView.setBackgroundResource(pic);
+
+        }
+
+
 
         mCourseNameTextView = findViewById(R.id.courseNameTextView);
         mSchoolTextView = findViewById(R.id.universitytextView);
@@ -61,4 +70,33 @@ public class CourseDetailActivity extends AppCompatActivity {
 
 
     }
+
+    private int getImg(int index) {
+        switch (index) {
+            case 0:
+                return R.drawable.course_pic_1;
+            case 1:
+                return R.drawable.course_pic_2;
+            case 2:
+                return R.drawable.course_pic_3;
+            case 3:
+                return R.drawable.course_pic_4;
+            case 4:
+                return R.drawable.course_pic_5;
+            case 5:
+                return R.drawable.course_pic_6;
+            case 6:
+                return R.drawable.course_pic_7;
+            case 7:
+                return R.drawable.course_pic_8;
+            case 8:
+                return R.drawable.course_pic_9;
+            case 9:
+                return R.drawable.course_pic_10;
+
+            default:
+                return -1;
+        }
+    }
+
 }
