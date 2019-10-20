@@ -29,5 +29,5 @@ Androi Studio
 显示课程大纲 （此部分实现可折叠）
 
 <figure class="third">
-    <img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_1.jpg" width="200"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_2.jpg" width="200"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_3.jpg" width="200"/>
+    <img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_1.jpg"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_2.jpg" /><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_3.jpg" />
 </figure>
