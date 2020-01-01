@@ -22,4 +22,12 @@ Androi Studio
 
 ![example](https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseList.jpg)
 
+#### 1.3.4课程详细信息
+添加了课程介绍视频播放功能
+显示课程名称及开课院校
+显示开课时间以及当前进度
+显示课程大纲 （此部分实现可折叠）
 
+<figure class="third">
+    <img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_1.jpg"/><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_2.jpg" /><img src="https://github.com/MasterOrigamii/Android-E-learn/blob/master/screenShot/CourseDetail_3.jpg" />
+</figure>
