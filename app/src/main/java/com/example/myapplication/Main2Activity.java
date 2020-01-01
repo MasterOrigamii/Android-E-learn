@@ -10,6 +10,7 @@ import com.example.myapplication.dummy.DummyContent;
 import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -19,7 +20,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-public class Main2Activity extends FragmentActivity implements com.example.myapplication.CourseListFragment.OnListFragmentInteractionListener {
+public class Main2Activity extends BaseActivity implements com.example.myapplication.CourseListFragment.OnListFragmentInteractionListener {
 
     private TextView mTextMessage;
 
@@ -87,6 +88,15 @@ public class Main2Activity extends FragmentActivity implements com.example.myapp
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    @Override
+    protected int getContentView(@Nullable Bundle savedInstanceState) {
+        return 0;
+    }
+
+    @Override
+    protected void initData(@Nullable Bundle savedInstanceState) {
+
+    }
 
 
     //隐藏所有Fragment

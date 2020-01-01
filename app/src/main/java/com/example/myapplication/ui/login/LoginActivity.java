@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -23,11 +25,25 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.BaseActivity;
 import com.example.myapplication.Main2Activity;
 import com.example.myapplication.MainPageActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.utlis.SpUtil;
 
-public class LoginActivity extends AppCompatActivity {
+import java.util.HashMap;
+
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.tencent.qq.QQ;
+
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.tencent.qq.QQ;
+
+public class LoginActivity extends BaseActivity implements PlatformActionListener {
 
     private LoginViewModel loginViewModel;
 
@@ -131,6 +147,24 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.QQ_login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginByQQ();
+            }
+        });
+    }
+
+    @Override
+    protected int getContentView(@Nullable Bundle savedInstanceState) {
+        return 0;
+    }
+
+    @Override
+    protected void initData(@Nullable Bundle savedInstanceState) {
+
+
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -141,5 +175,80 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    private void loginByQQ() {
+        Platform qq = ShareSDK.getPlatform(QQ.NAME);
+        qq.setPlatformActionListener(this);
+        qq.SSOSetting(false);
+        if (!qq.isClientValid()) {
+            Toast.makeText(this, "QQ未安装,请先安装QQ", Toast.LENGTH_SHORT).show();
+        }
+        authorize(qq);
+    }
+
+
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    Platform platform = (Platform) msg.obj;
+                    String userId = platform.getDb().getUserId();//获取用户账号
+                    String userName = platform.getDb().getUserName();//获取用户名字
+                    String userIcon = platform.getDb().getUserIcon();//获取用户头像
+                    String userGender = platform.getDb().getUserGender(); //获取用户性别，m = 男, f = 女，如果微信没有设置性别,默认返回null
+                    startActivity(Main2Activity.class);
+                    SpUtil.setBoolean("login",true);
+                    finish();
+
+                    break;
+                case 2:
+                    Toast.makeText(LoginActivity.this, "授权登陆失败", Toast.LENGTH_SHORT).show();
+                    break;
+                case 3:
+                    Toast.makeText(LoginActivity.this, "授权登陆取消", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };
+
+
+    private void authorize(Platform platform) {
+        if (platform == null) {
+            return;
+        }
+        if (platform.isAuthValid()) {  //如果授权就删除授权资料
+            platform.removeAccount(true);
+        }
+        platform.showUser(null); //授权并获取用户信息
+    }
+
+    @Override
+    public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
+        Message message = Message.obtain();
+        message.what = 1;
+        message.obj = platform;
+        mHandler.sendMessage(message);
+    }
+
+    @Override
+    public void onError(Platform platform, int i, Throwable throwable) {
+        Message message = Message.obtain();
+        message.what = 2;
+        message.obj = platform;
+        mHandler.sendMessage(message);
+    }
+
+    @Override
+    public void onCancel(Platform platform, int i) {
+        Message message = Message.obtain();
+        message.what = 3;
+        message.obj = platform;
+        mHandler.sendMessage(message);
     }
 }

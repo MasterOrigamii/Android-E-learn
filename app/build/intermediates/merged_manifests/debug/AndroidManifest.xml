@@ -1,55 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="29" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
-        android:allowBackup="true"
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-        android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:testOnly="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name="com.example.myapplication.CourseDetailActivity" />
-        <activity
-            android:name="com.example.myapplication.TestActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.myapplication.MainPageActivity"
-            android:label="@string/title_activity_main_page" />
-        <activity
-            android:name="com.example.myapplication.Main2Activity"
-            android:exported="true"
-            android:label="@string/title_activity_main_page" />
-        <activity
-            android:name="com.example.myapplication.ui.login.LoginActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <provider
-            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.example.myapplication.lifecycle-process"
-            android:exported="false"
-            android:multiprocess="true" />
-        <provider
-            android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="com.example.myapplication.com.android.tools.ir.server.InstantRunContentProvider"
-            android:multiprocess="true" />
-    </application>
-
+<?xml version="1.0" encoding="UTF-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.myapplication" android:versionName="1.0" android:versionCode="1">
+  <uses-sdk android:targetSdkVersion="27" android:minSdkVersion="18"/>
+  <uses-permission android:name="android.permission.INTERNET" xmlns:android="http://schemas.android.com/apk/res/android"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" xmlns:android="http://schemas.android.com/apk/res/android"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" xmlns:android="http://schemas.android.com/apk/res/android"/>
+  <application android:supportsRtl="true" android:debuggable="true" android:label="@string/app_name" android:name="androidx.multidex.MultiDexApplication" android:theme="@style/AppTheme" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:testOnly="true" android:roundIcon="@mipmap/ic_launcher_round">
+    <activity android:name="com.example.myapplication.CourseDetailActivity"/>
+    <activity android:name="com.example.myapplication.TestActivity" android:exported="true" xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <activity android:name="com.example.myapplication.MainPageActivity" android:label="@string/title_activity_main_page"/>
+    <activity android:label="@string/title_activity_main_page" android:name="com.example.myapplication.Main2Activity" android:exported="true"/>
+    <activity android:name="com.example.myapplication.ui.login.LoginActivity" android:label="@string/app_name" xmlns:android="http://schemas.android.com/apk/res/android">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <provider android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:authorities="com.example.myapplication.lifecycle-process" android:multiprocess="true"/>
+    <provider android:name="com.mob.MobProvider" android:exported="false" android:authorities="com.example.myapplication.com.mob.MobProvider" android:multiprocess="true"/>
+    <meta-data xmlns:tools="http://schemas.android.com/tools" android:name="Mob-AppKey" android:value="2da1c4bc9e183" tools:node="merge"/>
+    <meta-data xmlns:tools="http://schemas.android.com/tools" android:name="Mob-AppSecret" android:value="e0ab8ebdff3dd138e41d8a8b7513cd52" tools:node="merge"/>
+    <activity xmlns:tools="http://schemas.android.com/tools" android:windowSoftInputMode="stateHidden|adjustResize" android:name="com.mob.tools.MobUIShell" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" tools:node="merge">
+      <intent-filter>
+        <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+        <category android:name="android.intent.category.DEFAULT" xmlns:tools="http://schemas.android.com/tools"/>
+      </intent-filter>
+    </activity>
+    <activity android:name="cn.sharesdk.douyin.bdopen.DouYinHandlerActivity" android:configChanges="orientation|screenSize|keyboardHidden" android:exported="true"/>
+    <activity-alias android:name=".bdopen.BdEntryActivity" android:exported="true" android:targetActivity="cn.sharesdk.douyin.bdopen.DouYinHandlerActivity"/>
+    <activity xmlns:tools="http://schemas.android.com/tools" android:name="cn.sharesdk.facebookmessenger.ReceiveActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.PICK"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="com.facebook.orca.category.PLATFORM_THREAD_20150314"/>
+      </intent-filter>
+    </activity>
+    <activity android:launchMode="singleTask" android:name="cn.sharesdk.tencent.qq.ReceiveActivity" android:noHistory="true">
+      <intent-filter>
+        <data android:scheme="tencent1110087407"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+      </intent-filter>
+    </activity>
+    <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true"/>
+    <activity android:screenOrientation="behind" android:name="com.tencent.connect.common.AssistActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    <activity xmlns:tools="http://schemas.android.com/tools" android:name="cn.sharesdk.wechat.utils.WechatHandlerActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" tools:node="merge"/>
+    <activity-alias xmlns:tools="http://schemas.android.com/tools" android:name="com.example.myapplication.wxapi.WXEntryActivity" android:exported="true" android:targetActivity="cn.sharesdk.wechat.utils.WechatHandlerActivity" tools:node="merge"/>
+    <activity android:windowSoftInputMode="stateHidden|adjustResize" android:launchMode="singleTop" android:name="cn.sharesdk.framework.loopshare.RestoreTempActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    <activity xmlns:tools="http://schemas.android.com/tools" android:launchMode="singleTask" android:name="cn.sharesdk.loopshare.LoopShareActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT" xmlns:tools="http://schemas.android.com/tools"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="ssdk2da1c4bc9e183" android:host="cn.sharesdk.loop" xmlns:tools="http://schemas.android.com/tools"/>
+      </intent-filter>
+    </activity>
+  </application>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission xmlns:tools="http://schemas.android.com/tools" android:name="android.permission.CHANGE_WIFI_STATE"/>
 </manifest>
