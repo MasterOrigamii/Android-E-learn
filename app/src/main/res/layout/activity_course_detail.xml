@@ -4,15 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <chuangyuan.ycj.videolibrary.widget.VideoPlayerView
-        android:id="@+id/videoplayer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        app:resize_mode="fit"
-        app:fastforward_increment="1000"
-        app:rewind_increment="1000"
-        app:surface_type="surface_view" />
 
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
         android:id="@+id/scrollable"
@@ -70,9 +61,17 @@
                 android:layout_height="wrap_content"
                 app:c_divide_line_style="2" />
 
+
+
             <com.example.myapplication.CourseSyllabusItemLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" >
+
+
+            </com.example.myapplication.CourseSyllabusItemLayout>
+
+
+
 
             <com.example.myapplication.MenuItemLayout
                 android:layout_width="match_parent"
@@ -113,6 +112,20 @@
                 app:title_text="设置" />
 
 
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>

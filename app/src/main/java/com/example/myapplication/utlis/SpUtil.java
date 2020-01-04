@@ -29,10 +29,20 @@ public class SpUtil {
         prefs.edit().putLong(key, data).apply();
     }
 
+    /**
+     * 获取登录状态
+     * @param key
+     * @return
+     */
     public static boolean getBoolean(String key) {
         return prefs.getBoolean(key, false);
     }
 
+    /**
+     * 设置登录状态
+     * @param key
+     * @param data
+     */
     public static void setBoolean(String key, boolean data) {
         prefs.edit().putBoolean(key, data).apply();
     }

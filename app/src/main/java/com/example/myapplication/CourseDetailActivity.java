@@ -38,7 +38,6 @@ public class CourseDetailActivity extends AppCompatActivity {
                 mVideoView.setVideoURI(Uri.parse("android.resource://com.example.myapplication/"+R.raw.test3));
                 mVideoView.setMediaController(new MediaController(CourseDetailActivity.this));
                 mVideoView.setZOrderMediaOverlay(true);
-
                 mVideoView.setZOrderOnTop(true);
                 mVideoView.start();
 
@@ -54,7 +53,7 @@ public class CourseDetailActivity extends AppCompatActivity {
         int pic = getImg(picNumber);
         if (pic != -1) {
 
-            //mVideoView.setBackgroundResource(pic);
+            mVideoView.setBackgroundResource(pic);
 
         }
 
