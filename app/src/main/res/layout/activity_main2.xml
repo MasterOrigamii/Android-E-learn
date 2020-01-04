@@ -12,7 +12,8 @@
         android:id="@+id/ly_top_bar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#009688">
+        android:background="#009688"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/message"

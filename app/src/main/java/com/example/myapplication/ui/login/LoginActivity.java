@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,6 +17,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -28,10 +30,21 @@ import android.widget.Toast;
 import com.example.myapplication.BaseActivity;
 import com.example.myapplication.Main2Activity;
 import com.example.myapplication.MainPageActivity;
+import com.example.myapplication.MultiMediaActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.adapter.CourseAdapter;
+import com.example.myapplication.bean.CourseListBean;
+import com.example.myapplication.utlis.BaseUrl;
 import com.example.myapplication.utlis.SpUtil;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
@@ -49,6 +62,7 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        getDatas();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
@@ -132,16 +146,24 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
             @Override
             public void onClick(View v) {
 
-                loadingProgressBar.setVisibility(View.VISIBLE);
+//                loadingProgressBar.setVisibility(View.VISIBLE);
+//
+//                loginViewModel.login(usernameEditText.getText().toString(),
+//                       passwordEditText.getText().toString());
+//
+//               // 跳转至主页
+//                Intent MainPageActivity =
+//                        new Intent(getApplicationContext(), Main2Activity.class);
+//
+//                startActivity(MainPageActivity);
 
-                loginViewModel.login(usernameEditText.getText().toString(),
-                       passwordEditText.getText().toString());
+                getDatas();
+                Intent MultiMediaActivity =
+                        new Intent(getApplicationContext(), MultiMediaActivity.class);
+                MultiMediaActivity.putExtra("list", list.get(0));
 
-                //跳转至主页
-                Intent MainPageActivity =
-                        new Intent(getApplicationContext(), Main2Activity.class);
+                startActivity(MultiMediaActivity);
 
-                startActivity(MainPageActivity);
 
                 //结束这个Activity
                 finish();
@@ -155,7 +177,27 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
             }
         });
     }
+    //////////////////////////////
 
+    private ArrayList<CourseListBean> list;
+
+    private void getDatas() {
+
+        OkGo.<String>get(BaseUrl.baseUrl + "courses")
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Log.e("hedb", "onSuccess: " + response.body());
+                        Gson gson = new Gson();
+                        list = gson.fromJson(response.body(), new TypeToken<List<CourseListBean>>() {
+                        }.getType());
+
+
+                    }
+                });
+
+    }
+    //////////////////////////////
     @Override
     protected int getContentView(@Nullable Bundle savedInstanceState) {
         return 0;
@@ -164,7 +206,7 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
     @Override
     protected void initData(@Nullable Bundle savedInstanceState) {
 
-
+        getDatas();
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -176,7 +218,6 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
-
 
 
     private void loginByQQ() {

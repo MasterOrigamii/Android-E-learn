@@ -16,4 +16,14 @@
     <string name="title_activity_course_detail">CourseDetailActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
+    <string name="permission_hint">请允许使用[存储空间]权限!</string>
+
+    <string name="scan_digits">1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM`¬!"£$%^*()~=@#{}[];':,./?/*-;\_+&#060;&#062;&#064;&#038;</string>
+
+    <string name="techaname">教师名字:</string>
+    <string name="email">教师Email:</string>
+    <string name="phone">教师Phone:</string>
+    <string name="des">描述:</string>
+
 </resources>
