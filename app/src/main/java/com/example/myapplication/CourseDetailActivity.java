@@ -35,11 +35,13 @@ public class CourseDetailActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mVideoView.setVideoURI(Uri.parse("https://www.pornhub.com/view_video.php?viewkey=ph5d771a42eb593"));
                 mVideoView.setVideoURI(Uri.parse("android.resource://com.example.myapplication/"+R.raw.test3));
-                //mVideoView.setZOrderOnTop(true);
                 mVideoView.setMediaController(new MediaController(CourseDetailActivity.this));
+                mVideoView.setZOrderMediaOverlay(true);
+
+                mVideoView.setZOrderOnTop(true);
                 mVideoView.start();
+
             }
         });
 
@@ -52,7 +54,7 @@ public class CourseDetailActivity extends AppCompatActivity {
         int pic = getImg(picNumber);
         if (pic != -1) {
 
-            mVideoView.setBackgroundResource(pic);
+            //mVideoView.setBackgroundResource(pic);
 
         }
 

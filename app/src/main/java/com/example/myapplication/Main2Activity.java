@@ -6,18 +6,14 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myapplication.usercenter.UserCenterFragment;
 import com.example.myapplication.dummy.DummyContent;
-import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
 import android.widget.TextView;
 
 public class Main2Activity extends BaseActivity implements com.example.myapplication.CourseListFragment.OnListFragmentInteractionListener {
@@ -26,7 +22,11 @@ public class Main2Activity extends BaseActivity implements com.example.myapplica
 
     private FragmentManager fManager;
 
-    private com.example.myapplication.CourseListFragment fg1,fg2,fg3;
+    private HomepageFragment fg1;
+
+    private UserCenterFragment fg3;
+
+    private com.example.myapplication.CourseListFragment fg2;
 
     private BottomNavigationView.OnNavigationItemSelectedListener  mOnNavigationItemSelectedListener  = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -39,7 +39,7 @@ public class Main2Activity extends BaseActivity implements com.example.myapplica
                     mTextMessage.setText("主页");
                     hideAllFragment(fTransaction);
                     if(fg1 == null){
-                        fg1 = new com.example.myapplication.CourseListFragment();
+                        fg1 = new HomepageFragment();
                         fTransaction.add(R.id.ly_content,fg1);
                     }else{
                         fTransaction.show(fg1);
@@ -61,7 +61,7 @@ public class Main2Activity extends BaseActivity implements com.example.myapplica
                     mTextMessage.setText("我的信息");
                     hideAllFragment(fTransaction);
                     if(fg3 == null){
-                        fg3 = new com.example.myapplication.CourseListFragment();
+                        fg3 = new UserCenterFragment();
                         fTransaction.add(R.id.ly_content,fg3);
                     }else{
                         fTransaction.show(fg3);
@@ -79,12 +79,24 @@ public class Main2Activity extends BaseActivity implements com.example.myapplica
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main2);
-        fManager = getFragmentManager();
 
+        setContentView(R.layout.activity_main2);
+        mTextMessage = findViewById(R.id.message);
+        fManager = getFragmentManager();
+        FragmentTransaction fTransaction = fManager.beginTransaction();
+
+        mTextMessage.setText("主页");
+        hideAllFragment(fTransaction);
+        if(fg1 == null){
+            fg1 = new HomepageFragment();
+            fTransaction.add(R.id.ly_content,fg1);
+        }else{
+            fTransaction.show(fg1);
+        }
+        fTransaction.commit();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
+
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
