@@ -29,56 +29,56 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="6dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/xxx1" />
+                android:src="@mipmap/xxx2" />
 
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/teacher_name"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="臧老师"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.33"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/teacher_phone"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="电话:12932i932"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/teacher_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="曾立刚老师"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/email"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|end"
-                    android:text="email:djkdj@qq.com"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical|end"
+                        android:text="email:djkdj@qq.com"
+                        android:textSize="16dp" />
 
-                <TextView
-                    android:id="@+id/descrip"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:gravity="center_vertical|end"
-                    android:text="就是点击对哦大马克"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/descrip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="教授 | 硕士"
+                        android:textSize="16dp" />
 
-            </LinearLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
