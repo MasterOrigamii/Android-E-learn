@@ -85,7 +85,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
 
-<img src="/Users/pc/Desktop/E-learning截图/6.png" alt="6" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/6.png" alt="6" style="zoom:67%;" />
 
 + 输入密码时，如果密码输入格式不符合要求（不到5个字符），会有警告提示，并且无法点击登录按钮。
 + 当密码符合要求时，点击登录按钮，我们将会拿用户输入数据与数据库中的数据进行匹配，如果成功匹配，则跳转至***主页***，如果无法成功匹配，则登录失败。
