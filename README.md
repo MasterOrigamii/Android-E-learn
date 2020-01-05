@@ -81,7 +81,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.2 登录界面
 
-<img src="https://github.com/MasterOrigamii/Android-E-learn/tree/master/screenShot/5.png" alt="5" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/5.png" alt="5" style="zoom:67%;" />
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
 
@@ -103,7 +103,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.4 课程展示页
 
-<img src="/Users/pc/Desktop/E-learning截图/3.png" alt="3" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/3.png" alt="3" style="zoom:67%;" />
 
 + 全部课程页整体由一个`RecycleView`构成。
 
@@ -126,7 +126,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.5 课程详情页
 
-<img src="/Users/pc/Desktop/E-learning截图/2.png" alt="2" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/2.png" alt="2" style="zoom:67%;" />
 
 + 课程详情页主要由以下信息、功能组成：
 
@@ -145,13 +145,13 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 + 查看课程日历：
 
-<img src="/Users/pc/Desktop/E-learning截图/WechatIMG5724.png" alt="WechatIMG5724" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot//WechatIMG5724.png" alt="WechatIMG5724" style="zoom:67%;" />
 
 
 
 ### 3.6 个人中心页
 
-<img src="/Users/pc/Desktop/E-learning截图/4.png" alt="4" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/4.png" alt="4" style="zoom:67%;" />
 
 + 虽然文档中没有具体要求，但我们觉得登录成功之后确实应该有一个个人中心页面，于是设计了这个界面。
 + 界面可以从user表以下字段中动态加载数据：
@@ -161,7 +161,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.7 资源搜索页
 
-<img src="/Users/pc/Desktop/E-learning截图/7.png" alt="7" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/7.png" alt="7" style="zoom:67%;" />
 
 + 在上方搜索栏输入课程编号，点击回车键，即可获取该课程的学习材料。
 + 我们使用API从服务器获取图片、视频、音频、PDF等学习材料，传输到前端展示。
@@ -169,23 +169,23 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 + 打开视频：
 
-<img src="/Users/pc/Desktop/E-learning截图/8.png" alt="8" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/8.png" alt="8" style="zoom:67%;" />
 
 + 打开音频：
 
-<img src="/Users/pc/Desktop/E-learning截图/9.png" alt="9" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/9.png" alt="9" style="zoom:67%;" />
 
 ​	该画面中图片是静态的，只有声音在播放。
 
 + 打开PDF：
 
-<img src="/Users/pc/Desktop/E-learning截图/10.png" alt="10" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/10.png" alt="10" style="zoom:67%;" />
 
 + 在获取图片、视频、音频、PDF等数据时，我们都会使用多线程来提高传输速度，另外，我们会将其存入缓存，确保下次访问时直接从本地获取。
 
 + 点击右上角的分享按钮，可以分享学习资料。
 
-<img src="/Users/pc/Desktop/E-learning截图/11.png" alt="11" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/11.png" alt="11" style="zoom:67%;" />
 
 
 
@@ -193,7 +193,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 4.1 安卓测试
 
-<img src="/Users/pc/Desktop/E-learning截图/12.png" alt="12" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/12.png" alt="12" style="zoom: 33%;" />
 
 + 我们使用junit 4.12单元测试框架，对程序onCreate()方法进行了自动测试。
 + 测试onCreat()方法，实际上对整个程序的构建都进行了测试。
