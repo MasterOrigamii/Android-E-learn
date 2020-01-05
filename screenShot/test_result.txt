@@ -1,0 +1,54 @@
+Testing started at 20:46 ...
+
+01/05 20:46:09: Launching 'MainApplicationTest' on Pixel 2 API 29.
+Running tests
+
+$ adb shell am instrument -w -r   -e debug false -e class 'com.example.myapplication.test.MainApplicationTest' com.example.myapplication.test/androidx.test.runner.AndroidJUnitRunner
+Waiting for process to come online...
+Connected to process 5315 on device 'emulator-5554'.
+Capturing and displaying logcat messages from application. This behavior can be disabled in the "Logcat output" section of the "Debugger" settings page.
+I/e.myapplicatio: Not late-enabling -Xcheck:jni (already on)
+E/e.myapplicatio: Unknown bits set in runtime_flags: 0x8000
+W/e.myapplicatio: Unexpected CPU variant for X86 using defaults: x86
+W/ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.example.myapplication]: x86, null instrumentation[com.example.myapplication.test]: null, null
+I/e.myapplicatio: The ClassLoaderContext is a special shared library.
+I/chatty: uid=10136(com.example.myapplication) identical 1 line
+I/e.myapplicatio: The ClassLoaderContext is a special shared library.
+I/e.myapplicatio: The ClassLoaderContext is a special shared library.
+I/e.myapplicatio: The ClassLoaderContext is a special shared library.
+I/chatty: uid=10136(com.example.myapplication) identical 1 line
+I/e.myapplicatio: The ClassLoaderContext is a special shared library.
+W/e.myapplicatio: Accessing hidden method Landroid/app/Instrumentation;->execStartActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/Instrumentation$ActivityResult; (greylist, linking, allowed)
+    Accessing hidden method Landroid/app/Instrumentation;->execStartActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Ljava/lang/String;Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/Instrumentation$ActivityResult; (greylist, linking, allowed)
+D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+I/MonitoringInstr: Instrumentation started!
+I/MonitoringInstr: Setting context classloader to 'dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/android.test.runner.jar", zip file "/system/framework/org.apache.http.legacy.jar", zip file "/system/framework/android.test.mock.jar", zip file "/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk", zip file "/data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk"],nativeLibraryDirectories=[/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/lib/x86, /data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk!/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk!/lib/x86, /system/lib, /system/product/lib]]]', Original: 'dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/android.test.runner.jar", zip file "/system/framework/org.apache.http.legacy.jar", zip file "/system/framework/android.test.mock.jar", zip file "/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk", zip file "/data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk"],nativeLibraryDirectories=[/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/lib/x86, /data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk!/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk!/lib/x86, /system/lib, /system/product/lib]]]'
+W/e.myapplicatio: Accessing hidden method Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard; (greylist,core-platform-api, reflection, allowed)
+    Accessing hidden method Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V (greylist,core-platform-api, reflection, allowed)
+    Accessing hidden method Ldalvik/system/CloseGuard;->warnIfOpen()V (greylist,core-platform-api, reflection, allowed)
+E/BluetoothAdapter: Bluetooth binder is null
+I/MonitoringInstr: No JSBridge.
+I/MonitoringInstr: Setting context classloader to 'dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/android.test.runner.jar", zip file "/system/framework/org.apache.http.legacy.jar", zip file "/system/framework/android.test.mock.jar", zip file "/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk", zip file "/data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk"],nativeLibraryDirectories=[/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/lib/x86, /data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk!/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk!/lib/x86, /system/lib, /system/product/lib]]]', Original: 'dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/android.test.runner.jar", zip file "/system/framework/org.apache.http.legacy.jar", zip file "/system/framework/android.test.mock.jar", zip file "/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk", zip file "/data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk"],nativeLibraryDirectories=[/data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/lib/x86, /data/app/com.example.myapplication.test-N41ajC8Ioh12Pjm7N2WucA==/base.apk!/lib/x86, /data/app/com.example.myapplication-WqDJHJq9EHzD1DyRelauOg==/base.apk!/lib/x86, /system/lib, /system/product/lib]]]'
+E/BluetoothAdapter: Bluetooth binder is null
+I/UsageTrackerFacilitator: Usage tracking enabled
+W/System: Ignoring header moid because its value was null.
+D/TestExecutor: Adding listener androidx.test.internal.runner.listener.LogRunListener
+D/TestExecutor: Adding listener androidx.test.internal.runner.listener.InstrumentationResultPrinter
+    Adding listener androidx.test.internal.runner.listener.ActivityFinisherRunListener
+I/TestRunner: run started: 1 tests
+I/TestRunner: started: onCreate(com.example.myapplication.test.MainApplicationTest)
+I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0
+I/TestRunner: finished: onCreate(com.example.myapplication.test.MainApplicationTest)
+I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0
+I/TestRunner: run finished: 1 tests, 0 failed, 0 ignored
+
+Started running tests
+W/MobSDK/Policy: 您好！依照国家对网络安全及数据安全的要求，请您运营的APP集成并向终端用户展示Mob SDK的隐私政策。
+W/Settings: Setting adb_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+W/Thread-14: type=1400 audit(0.0:284): avc: denied { read } for name="drivers" dev="proc" ino=4026531853 scontext=u:r:untrusted_app_27:s0:c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0
+I/MonitoringInstr: waitForActivitiesToComplete() took: 0ms
+I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0
+
+Tests ran to completion.
+
+
