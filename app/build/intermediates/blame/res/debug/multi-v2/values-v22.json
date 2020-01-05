@@ -4,7 +4,7 @@
             "outputFile": "E:\\AndroidProject\\MyApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\8cc504bd87d7f0104d0ae37697588b6d\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\8241b1ebc608f57abba8c6f18ffb5ba7\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

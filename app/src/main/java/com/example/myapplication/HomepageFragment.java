@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.app.Fragment;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +19,12 @@ import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.myapplication.adapter.TeacherAdapter;
 import com.example.myapplication.bean.TeacherBean;
 import com.example.myapplication.dummy.DummyContent.DummyItem;
-
-
 import com.example.myapplication.utlis.BaseUrl;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
-
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +48,6 @@ public class HomepageFragment extends Fragment {
     private ArrayList<TeacherBean> list;
 
 
-
     @BindView(R.id.banner2)
     BannerLayout bannerLayout2;
 
@@ -72,8 +66,6 @@ public class HomepageFragment extends Fragment {
     }
 
 
-
-
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static HomepageFragment newInstance(int columnCount) {
@@ -81,7 +73,6 @@ public class HomepageFragment extends Fragment {
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
-
 
         return fragment;
     }
@@ -93,13 +84,8 @@ public class HomepageFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
-
-
-
         adapter = new TeacherAdapter(R.layout.item_teacher_list);
         getDatas();
-
-
 
     }
 
@@ -108,21 +94,19 @@ public class HomepageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_homepage, container, false);
 
-
         List<String> urls = new ArrayList<>();
         urls.add(BaseUrl.baseImage + "001/course_pic_1.jpg");
-        urls.add(BaseUrl.baseImage + "001/course_pic_1.jpg");
-        urls.add(BaseUrl.baseImage + "001/course_pic_1.jpg");
-        urls.add(BaseUrl.baseImage + "001/course_pic_1.jpg");
+        urls.add(BaseUrl.baseImage + "001/course_pic_2.jpg");
+        urls.add(BaseUrl.baseImage + "001/course_pic_3.jpg");
+        urls.add(BaseUrl.baseImage + "001/course_pic_4.jpg");
 
         List<String> titleas = new ArrayList<>();
-        titleas.add("标题一");
-        titleas.add("标题二");
-        titleas.add("标题三");
-        titleas.add("标题四");
+        titleas.add("精品安卓课程");
+        titleas.add("精品数据库理论课程");
+        titleas.add("计算机网络课程");
+        titleas.add("软件工程概论");
 
         bannerLayout2 = view.findViewById(R.id.banner2);
-
 
         RecyclerView recycleView;
         recycleView = view.findViewById(R.id.recycleView);
@@ -136,7 +120,6 @@ public class HomepageFragment extends Fragment {
                 }
             });
         }
-
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -166,18 +149,9 @@ public class HomepageFragment extends Fragment {
     }
 
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-//        if (context instanceof OnListFragmentInteractionListener) {
-//          //  mListener = (OnListFragmentInteractionListener) context;
-//
-//
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnListFragmentInteractionListener");
-//        }
     }
 
     @Override
@@ -198,7 +172,6 @@ public class HomepageFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
 
-
         // TODO: Update argument type and name
 
         /**
@@ -207,8 +180,6 @@ public class HomepageFragment extends Fragment {
          */
         void onListFragmentInteraction(DummyItem item);
     }
-
-
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -224,7 +195,6 @@ public class HomepageFragment extends Fragment {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        Log.e("hedb", "onSuccess: " + response.body());
                         Gson gson = new Gson();
                         list = gson.fromJson(response.body(), new TypeToken<List<TeacherBean>>() {
                         }.getType());

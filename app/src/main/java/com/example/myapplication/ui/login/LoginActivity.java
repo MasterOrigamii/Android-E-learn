@@ -34,6 +34,7 @@ import com.example.myapplication.MultiMediaActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.adapter.CourseAdapter;
 import com.example.myapplication.bean.CourseListBean;
+import com.example.myapplication.usercenter.MainActivity;
 import com.example.myapplication.utlis.BaseUrl;
 import com.example.myapplication.utlis.SpUtil;
 import com.google.gson.Gson;
@@ -62,6 +63,14 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        if ( SpUtil.getBoolean("login")){
+            startActivity(Main2Activity.class);
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            finish();
+        }
+
+
         getDatas();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -146,23 +155,26 @@ public class LoginActivity extends BaseActivity implements PlatformActionListene
             @Override
             public void onClick(View v) {
 
-//                loadingProgressBar.setVisibility(View.VISIBLE);
-//
-//                loginViewModel.login(usernameEditText.getText().toString(),
-//                       passwordEditText.getText().toString());
-//
-//               // 跳转至主页
-//                Intent MainPageActivity =
-//                        new Intent(getApplicationContext(), Main2Activity.class);
-//
-//                startActivity(MainPageActivity);
+                loadingProgressBar.setVisibility(View.VISIBLE);
 
-                getDatas();
-                Intent MultiMediaActivity =
-                        new Intent(getApplicationContext(), MultiMediaActivity.class);
-                MultiMediaActivity.putExtra("list", list.get(0));
+                loginViewModel.login(usernameEditText.getText().toString(),
+                       passwordEditText.getText().toString());
 
-                startActivity(MultiMediaActivity);
+               // 登录成功后跳转至主页
+                Intent MainPageActivity =
+                        new Intent(getApplicationContext(), Main2Activity.class);
+
+                //记录登录状态
+                SpUtil.setBoolean("login",true);
+
+                startActivity(MainPageActivity);
+
+//                getDatas();
+//                Intent MultiMediaActivity =
+//                        new Intent(getApplicationContext(), MultiMediaActivity.class);
+//                MultiMediaActivity.putExtra("list", list.get(0));
+//
+//                startActivity(MultiMediaActivity);
 
 
                 //结束这个Activity
