@@ -92,7 +92,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.3 主页
 
-<img src="/Users/pc/Desktop/E-learning截图/1.png" alt="1" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/MasterOrigamii/Android-E-learn/master/screenShot/1.png" alt="1" style="zoom: 67%;" />
 
 + 主页主要由两部分构成：
   + 上方可滑动精品课程推荐栏。点击后查看推荐课程的详细信息。
